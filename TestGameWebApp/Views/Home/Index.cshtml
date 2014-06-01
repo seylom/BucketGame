@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Bucket Game - Give it a try!";
+}
+
+<div id="content_parent">
+    <div id="left_content">
+        <div id="entry_bx"> 
+            <p id="inst">
+                Enter capacity for Bucket 1 and Bucket 2 and a Target value
+            </p>
+            <div class="bentry">
+                <input id="bucket1" class="tbox number" type="text" placeholder="Bucket 1"/>
+                <div id="b1_valid" class="valid"><span id="b1_valid_mess" class="valid_mess">invalid entry</span></div>
+            </div>
+            <div class="bentry">
+                <input id="bucket2" class="tbox number" type="text" placeholder="Bucket 2"/>
+                <div id="b2_valid" class="valid"><span id="b2_valid_mess" class="valid_mess">invalid entry</span></div>
+            </div>
+             <div class="bentry"> 
+                <input id="target_val" class="tbox number" type="text" placeholder="Target value"/>
+                <div id="target_valid" class="valid"><span id="target_valid_mess" class="valid_mess">invalid entry</span></div>
+            </div>
+            <input type="button" name="solve" value="Solve" class="btn" id="solve_btn">
+        </div>
+    </div>
+    <div id="right_content">
+        <div style="margin-top:15px">Steps:</div>
+        <div id="results_bx">    
+            <div id="result_steps">
+        
+            </div>
+            <div>
+                *all images property of <a href="http://www.clker.com/profile-215256.html" target="_blank">cbair</a>
+            </div>
+         </div>
+        <div class="trans" style="display:none">
+            <div class="buck">
+                <div class="rbuck"></div>
+                <div class="capacity">
+                    5
+                </div>
+            </div>
+            <div class="buck">
+                <div class="wbuck"></div>
+                <div class="capacity">
+                    5
+                </div>
+            </div>
+            <div class="step_mess">
+                <p><Span class="stepnum">1</Span>Transfer bucket 1 to bucket 2</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+
+    $(document).ready(function () {
+        $(".number").numeric();
+
+        game_steps.Init('/Game/');
+    });
+
+    //]]>
+</script>
