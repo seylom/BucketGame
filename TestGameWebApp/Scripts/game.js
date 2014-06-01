@@ -92,19 +92,21 @@ var game_steps = function () {
             $("#b1_valid_mess").html("Bucket 1 value is required");
             valid = 0;
         }
-        else if(!intRegex.test(val1)){
+        else if (!intRegex.test(val1)) {
             $("#b1_valid").css('display', 'inline');
-            $("#b1_valid_mess").html("Bucket 1 should be an integer value");
+            $("#b1_valid_mess").html("Bucket 1 should be a positive integer");
+            valid = 0;
         }
 
         if (!val2) {
             $("#b2_valid").css('display', 'inline');
             $("#b2_valid_mess").html("Bucket 2 value is required");
             valid = 0;
-        } 
+        }
         else if (!intRegex.test(val2)) {
             $("#b2_valid").css('display', 'inline');
-            $("#b2_valid_mess").html("Bucket 1 should be an integer");
+            $("#b2_valid_mess").html("Bucket 1 should be a positive integer");
+            valid = 0;
         }
 
         if (!val3) {
@@ -114,7 +116,8 @@ var game_steps = function () {
         }
         else if (!intRegex.test(val3)) {
             $("#target_valid").css('display', 'inline');
-            $("#target_valid_mess").html("Target value should be an integer value");
+            $("#target_valid_mess").html("Target value should be a positive integer");
+            valid = 0;
         }
 
         if ((val1 && val2 && val3) &&

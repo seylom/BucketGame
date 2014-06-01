@@ -94,6 +94,9 @@ namespace TestGame.Core
         /// </remarks>
         private void ComputeSteps()
         {
+            if (_transitionMap.Count == 0)
+                return;
+
             foreach (GameState gameState in _transitionMap.Keys)
                 _numberOfStepsTo.Add(gameState, 99999); //setting the number of steps to an arbitrarily large value.
 
